@@ -1,0 +1,359 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4C06B99C1EA351A70023D7FA /* RecipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C06B99B1EA351A70023D7FA /* RecipeViewController.swift */; };
+		4C06B99E1EA351CE0023D7FA /* HerbSpiceListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C06B99D1EA351CE0023D7FA /* HerbSpiceListViewController.swift */; };
+		4C06B9A01EA351DB0023D7FA /* HerbSpiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C06B99F1EA351DB0023D7FA /* HerbSpiceViewController.swift */; };
+		4C4447FA1EA55BAC000E2F1B /* HerbSpice+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C4447F81EA55BAC000E2F1B /* HerbSpice+CoreDataClass.swift */; };
+		4C4447FB1EA55BAC000E2F1B /* HerbSpice+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C4447F91EA55BAC000E2F1B /* HerbSpice+CoreDataProperties.swift */; };
+		4CAD89CB1E80FEC10094A6EE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CAD89CA1E80FEC10094A6EE /* AppDelegate.swift */; };
+		4CAD89CD1E80FEC10094A6EE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CAD89CC1E80FEC10094A6EE /* ViewController.swift */; };
+		4CAD89D01E80FEC10094A6EE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4CAD89CE1E80FEC10094A6EE /* Main.storyboard */; };
+		4CAD89D31E80FEC10094A6EE /* EatBook.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4CAD89D11E80FEC10094A6EE /* EatBook.xcdatamodeld */; };
+		4CAD89D51E80FEC10094A6EE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4CAD89D41E80FEC10094A6EE /* Assets.xcassets */; };
+		4CAD89D81E80FEC10094A6EE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4CAD89D61E80FEC10094A6EE /* LaunchScreen.storyboard */; };
+		4CBF14DC1EA0739500E96090 /* RecipeListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CBF14DB1EA0739500E96090 /* RecipeListViewController.swift */; };
+		4CF959B81EA5BB0D0067B301 /* Recipe+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF959B61EA5BB0D0067B301 /* Recipe+CoreDataClass.swift */; };
+		4CF959B91EA5BB0D0067B301 /* Recipe+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF959B71EA5BB0D0067B301 /* Recipe+CoreDataProperties.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		4C06B99B1EA351A70023D7FA /* RecipeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeViewController.swift; sourceTree = "<group>"; };
+		4C06B99D1EA351CE0023D7FA /* HerbSpiceListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HerbSpiceListViewController.swift; sourceTree = "<group>"; };
+		4C06B99F1EA351DB0023D7FA /* HerbSpiceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HerbSpiceViewController.swift; sourceTree = "<group>"; };
+		4C4447F81EA55BAC000E2F1B /* HerbSpice+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "HerbSpice+CoreDataClass.swift"; sourceTree = "<group>"; };
+		4C4447F91EA55BAC000E2F1B /* HerbSpice+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "HerbSpice+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		4CAD89C71E80FEC10094A6EE /* EatBook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EatBook.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4CAD89CA1E80FEC10094A6EE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		4CAD89CC1E80FEC10094A6EE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		4CAD89CF1E80FEC10094A6EE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		4CAD89D21E80FEC10094A6EE /* EatBook.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = EatBook.xcdatamodel; sourceTree = "<group>"; };
+		4CAD89D41E80FEC10094A6EE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		4CAD89D71E80FEC10094A6EE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		4CAD89D91E80FEC10094A6EE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4CBF14DB1EA0739500E96090 /* RecipeListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RecipeListViewController.swift; path = ../RecipeListViewController.swift; sourceTree = "<group>"; };
+		4CF959B61EA5BB0D0067B301 /* Recipe+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Recipe+CoreDataClass.swift"; sourceTree = "<group>"; };
+		4CF959B71EA5BB0D0067B301 /* Recipe+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Recipe+CoreDataProperties.swift"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		4CAD89C41E80FEC10094A6EE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		4CAD89BE1E80FEC10094A6EE = {
+			isa = PBXGroup;
+			children = (
+				4CF959B61EA5BB0D0067B301 /* Recipe+CoreDataClass.swift */,
+				4CF959B71EA5BB0D0067B301 /* Recipe+CoreDataProperties.swift */,
+				4C4447F81EA55BAC000E2F1B /* HerbSpice+CoreDataClass.swift */,
+				4C4447F91EA55BAC000E2F1B /* HerbSpice+CoreDataProperties.swift */,
+				4CAD89C91E80FEC10094A6EE /* EatBook */,
+				4CAD89C81E80FEC10094A6EE /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		4CAD89C81E80FEC10094A6EE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4CAD89C71E80FEC10094A6EE /* EatBook.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4CAD89C91E80FEC10094A6EE /* EatBook */ = {
+			isa = PBXGroup;
+			children = (
+				4CBF14DB1EA0739500E96090 /* RecipeListViewController.swift */,
+				4C06B99B1EA351A70023D7FA /* RecipeViewController.swift */,
+				4C06B99D1EA351CE0023D7FA /* HerbSpiceListViewController.swift */,
+				4C06B99F1EA351DB0023D7FA /* HerbSpiceViewController.swift */,
+				4CAD89CA1E80FEC10094A6EE /* AppDelegate.swift */,
+				4CAD89CC1E80FEC10094A6EE /* ViewController.swift */,
+				4CAD89CE1E80FEC10094A6EE /* Main.storyboard */,
+				4CAD89D41E80FEC10094A6EE /* Assets.xcassets */,
+				4CAD89D61E80FEC10094A6EE /* LaunchScreen.storyboard */,
+				4CAD89D91E80FEC10094A6EE /* Info.plist */,
+				4CAD89D11E80FEC10094A6EE /* EatBook.xcdatamodeld */,
+			);
+			path = EatBook;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		4CAD89C61E80FEC10094A6EE /* EatBook */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4CAD89DC1E80FEC10094A6EE /* Build configuration list for PBXNativeTarget "EatBook" */;
+			buildPhases = (
+				4CAD89C31E80FEC10094A6EE /* Sources */,
+				4CAD89C41E80FEC10094A6EE /* Frameworks */,
+				4CAD89C51E80FEC10094A6EE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = EatBook;
+			productName = EatBook;
+			productReference = 4CAD89C71E80FEC10094A6EE /* EatBook.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		4CAD89BF1E80FEC10094A6EE /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0820;
+				LastUpgradeCheck = 0820;
+				ORGANIZATIONNAME = "Michael Bi";
+				TargetAttributes = {
+					4CAD89C61E80FEC10094A6EE = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = RCT2RYJG2N;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 4CAD89C21E80FEC10094A6EE /* Build configuration list for PBXProject "EatBook" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 4CAD89BE1E80FEC10094A6EE;
+			productRefGroup = 4CAD89C81E80FEC10094A6EE /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				4CAD89C61E80FEC10094A6EE /* EatBook */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		4CAD89C51E80FEC10094A6EE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4CAD89D81E80FEC10094A6EE /* LaunchScreen.storyboard in Resources */,
+				4CAD89D51E80FEC10094A6EE /* Assets.xcassets in Resources */,
+				4CAD89D01E80FEC10094A6EE /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4CAD89C31E80FEC10094A6EE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4C06B99E1EA351CE0023D7FA /* HerbSpiceListViewController.swift in Sources */,
+				4C4447FA1EA55BAC000E2F1B /* HerbSpice+CoreDataClass.swift in Sources */,
+				4CBF14DC1EA0739500E96090 /* RecipeListViewController.swift in Sources */,
+				4CAD89CD1E80FEC10094A6EE /* ViewController.swift in Sources */,
+				4C06B9A01EA351DB0023D7FA /* HerbSpiceViewController.swift in Sources */,
+				4CF959B81EA5BB0D0067B301 /* Recipe+CoreDataClass.swift in Sources */,
+				4CAD89D31E80FEC10094A6EE /* EatBook.xcdatamodeld in Sources */,
+				4C4447FB1EA55BAC000E2F1B /* HerbSpice+CoreDataProperties.swift in Sources */,
+				4CF959B91EA5BB0D0067B301 /* Recipe+CoreDataProperties.swift in Sources */,
+				4CAD89CB1E80FEC10094A6EE /* AppDelegate.swift in Sources */,
+				4C06B99C1EA351A70023D7FA /* RecipeViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		4CAD89CE1E80FEC10094A6EE /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4CAD89CF1E80FEC10094A6EE /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		4CAD89D61E80FEC10094A6EE /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4CAD89D71E80FEC10094A6EE /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		4CAD89DA1E80FEC10094A6EE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		4CAD89DB1E80FEC10094A6EE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		4CAD89DD1E80FEC10094A6EE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = RCT2RYJG2N;
+				INFOPLIST_FILE = EatBook/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = mhanbi.EatBook;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		4CAD89DE1E80FEC10094A6EE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = RCT2RYJG2N;
+				INFOPLIST_FILE = EatBook/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = mhanbi.EatBook;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4CAD89C21E80FEC10094A6EE /* Build configuration list for PBXProject "EatBook" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4CAD89DA1E80FEC10094A6EE /* Debug */,
+				4CAD89DB1E80FEC10094A6EE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4CAD89DC1E80FEC10094A6EE /* Build configuration list for PBXNativeTarget "EatBook" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4CAD89DD1E80FEC10094A6EE /* Debug */,
+				4CAD89DE1E80FEC10094A6EE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		4CAD89D11E80FEC10094A6EE /* EatBook.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				4CAD89D21E80FEC10094A6EE /* EatBook.xcdatamodel */,
+			);
+			currentVersion = 4CAD89D21E80FEC10094A6EE /* EatBook.xcdatamodel */;
+			path = EatBook.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 4CAD89BF1E80FEC10094A6EE /* Project object */;
+}
