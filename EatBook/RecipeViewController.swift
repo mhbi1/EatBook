@@ -69,6 +69,27 @@ class RecipeViewController: UIViewController {
         return direct
     }
     
+    // Converts the double to a string
+    func getAmount(i: Ingredient) -> String{
+        var str = ""
+        let num = i.getAmount() * 4
+        let quo = num / 4
+        let rem = num.truncatingRemainder(dividingBy: 4)
+        if (rem == 1){
+            str = "\(quo) 1/4"
+        }
+        else if (rem == 2){
+            str = "\(quo) 2/4"
+        }
+        else if (rem == 3){
+            str = "\(quo) 3/4"
+        }
+        else{
+            str = "\(quo)"
+        }
+        return str
+    }
+    
     func getIngredients() -> String{
         var list = ""
         
@@ -78,7 +99,7 @@ class RecipeViewController: UIViewController {
             let ingred: Ingredient = ingredients[i]
             let t = getMeasurementType(m: ingred.getMeasurement())
             
-            list += "\(ingred.getAmount()) \(t)       \(ingred.getIName()) \n"
+            list += "\(getAmount(i: ingred)) \(t)       \(ingred.getIName()) \n"
         }
         
         return list

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 
 class AddRecipeViewController: UIViewController,  UIPickerViewDataSource, UIPickerViewDelegate {
@@ -22,30 +23,42 @@ class AddRecipeViewController: UIViewController,  UIPickerViewDataSource, UIPick
     @IBOutlet weak var ingredientView: UITextView!
     @IBOutlet weak var image: UIImageView!
     
-    public var newRecipe: Recipe = Recipe()
     public var iList: [Ingredient] = []
     public var dList: [String] = []
+    var recipeListVC: RecipeListViewController = RecipeListViewController()
     var m: Int = 0
     var c: Int = 0
-    var mItems = ["tsp", "tbsp", "cup"]
+    var a: Double = 0.0
+    var aItems = [["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10"], [" ", "3/4", "1/2", "1/4"]]
+    var mItems = ["tsp", "tbsp", "cup(s)", "oz", "lb(s)"]
     var cItems = ["Breakfast/Brucnh", "Lunch", "Appetizers/Snacks", "Entrees: Chicken", "Entrees: Beef", "Entrees: Other", "Desserts"]
+    var ingredientsData: NSManagedObjectContext = (UIApplication.shared.delegate as! AppDelegate).managedObjectContext
     
     
     @IBAction func saveRecipe(_ sender: UIBarButtonItem) {
+        let ent = NSEntityDescription.entity(forEntityName: "Recipe", in: recipeListVC.recipeData)
+        let newRecipe = Recipe(entity: ent!, insertInto: recipeListVC
+            .recipeData)
+        
         newRecipe.addRName(n: rName.text!)
         newRecipe.addCategory(i: c)
-        for i in iList{
-             newRecipe.addToIngredientRel(i)
-        }
+        for i in iList{ newRecipe.addToIngredientRel(i) }
         newRecipe.addDirections(d: dList)
+        
+        do {
+            try recipeListVC.recipeData.save()
+        } catch _ {}
+        
         print(newRecipe)
+        self.performSegue(withIdentifier: "addToList", sender: self)
     }
     
     
     @IBAction func addIngredient(_ sender: UIButton) {
-        let newItem = Ingredient()
+        let ent = NSEntityDescription.entity(forEntityName: "Ingredient", in: self.ingredientsData)
+        let newItem = Ingredient(entity: ent!, insertInto: self.ingredientsData)
         newItem.addIName(n: iName.text!)
-        newItem.addAmount(d: Double(iAmount.text!)!)
+        newItem.addAmount(d: a)
         newItem.addMeasurement(i: m)
         
         iList.append(newItem)
@@ -70,27 +83,31 @@ class AddRecipeViewController: UIViewController,  UIPickerViewDataSource, UIPick
     
     func updateDirections(){
         var list = ""
-        for d in 0...dList.count{
-            list += "\(d). \(dList[d])).\n"
+        for d in 1...dList.count{
+            list += "\(d). \(dList[d-1]).\n"
         }
         directionView.text = list
+        direction.text = ""
     }
     
     //Number of columns in picker
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return 1
+        if (pickerView.tag == 2){ return aItems.count }
+        else{ return 1 }
     }
     
     //Number of rows in components
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         if (pickerView.tag == 0) { return cItems.count}
-        else { return mItems.count}
+        else if (pickerView.tag == 1) { return mItems.count}
+        else { return aItems[component].count}
     }
     
     //Set name of each row
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         if (pickerView.tag == 0) { return cItems[row]}
-        else { return mItems[row]}
+        else if (pickerView.tag == 1)  { return mItems[row]}
+        else { return aItems[component][row]}
     }
     
     //Updates textfield with name
@@ -99,9 +116,28 @@ class AddRecipeViewController: UIViewController,  UIPickerViewDataSource, UIPick
             category.text = cItems[row]
             c = row
         }
-        else {
+        else if (pickerView.tag == 1) {
             measurement.text = mItems[row]
             m = row
+        }
+        else {
+            let w = aItems[0][pickerView.selectedRow(inComponent: 0)]
+            let f = aItems[1][pickerView.selectedRow(inComponent: 1)]
+            
+            iAmount.text = w + " "  + f
+            
+            if (f == "3/4"){
+                a = Double(w)! + 0.75
+            }
+            else if (f == "1/2"){
+                a = Double(w)! + 0.5
+            }
+            else if (f == "1/4"){
+                a = Double(w)! + 0.25
+            }
+            else{
+                a = Double(w)!
+            }
         }
     }
     
@@ -111,14 +147,18 @@ class AddRecipeViewController: UIViewController,  UIPickerViewDataSource, UIPick
         //Sets up two pickerViews
         let cPicker = UIPickerView()
         let mPicker = UIPickerView()
+        let aPicker = UIPickerView()
         cPicker.delegate = self
         mPicker.delegate = self
+        aPicker.delegate = self
         
         category.inputView = cPicker
         measurement.inputView = mPicker
+        iAmount.inputView = aPicker
         
         cPicker.tag = 0
         mPicker.tag = 1
+        aPicker.tag = 2
     }
 
     override func didReceiveMemoryWarning() {

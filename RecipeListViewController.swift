@@ -93,21 +93,6 @@ class RecipeListViewController: UIViewController, UITableViewDelegate, UITableVi
     }
 
     @IBAction func backToRList(segue: UIStoryboardSegue){
-        if(segue.identifier == "addToList"){
-            if let vc = segue.source as? AddRecipeViewController{
-                let ent = NSEntityDescription.entity(forEntityName: "Recipe", in: self.recipeData)
-                var newRecipe = Recipe(entity: ent!, insertInto: self.recipeData)
-                
-                newRecipe = vc.newRecipe
-                
-                do {
-                    try self.recipeData.save()
-                } catch _ {}
-                
-                print(newRecipe)
-            }
-        }
-        else if (segue.identifier == "viewToList"){}
     }
     
     override func viewDidLoad() {
