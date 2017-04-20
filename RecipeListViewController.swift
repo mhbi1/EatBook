@@ -27,7 +27,7 @@ class RecipeListViewController: UIViewController, UITableViewDelegate, UITableVi
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         //If no recipes
         if (recipes.count == 0){
-            let noDataLabel: UILabel     = UILabel(frame: CGRect(x: 0, y: 0, width: tableView.bounds.size.width, height: tableView.bounds.size.height))
+            let noDataLabel: UILabel     = UILabel(frame: CGRect(x: 0, y: 0, width: tableView.bounds.size.width, height: tableView.bounds.size.height-20))
             noDataLabel.text          = "No recipes available"
             noDataLabel.textColor     = UIColor.black
             noDataLabel.textAlignment = .center
@@ -99,7 +99,7 @@ class RecipeListViewController: UIViewController, UITableViewDelegate, UITableVi
     }
 
     @IBAction func backToRList(segue: UIStoryboardSegue){
-        //fetchList()
+        fetchList()
         self.recipeTable.reloadData()
     }
     
@@ -108,7 +108,7 @@ class RecipeListViewController: UIViewController, UITableViewDelegate, UITableVi
         fetchList()
         recipeTable.rowHeight = UITableViewAutomaticDimension
         //recipeTable.estimatedRowHeight = 35
-        recipeTable.frame = CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: self.view.frame.size.height)
+        //recipeTable.frame = CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: self.view.frame.size.height)
         // Do any additional setup after loading the view.
     }
 
