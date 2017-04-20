@@ -42,7 +42,7 @@ class AddRecipeViewController: UIViewController,  UIPickerViewDataSource, UIPick
         newRecipe.addRName(n: rName.text!)
         newRecipe.addCategory(i: Int16(c))
         newRecipe.addDirections(d: dList)
-        //for i in iList{ newRecipe.addToIngredientRel(i) }
+        for i in iList{ newRecipe.addToIngredientRel(i) }
         
         do {
             try recipeListVC.recipeData.save()

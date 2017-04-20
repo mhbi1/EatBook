@@ -115,7 +115,7 @@ class RecipeListViewController: UIViewController, UITableViewDelegate, UITableVi
         fetchList()
         recipeTable.rowHeight = UITableViewAutomaticDimension
         //recipeTable.estimatedRowHeight = 35
-        //recipeTable.frame = CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: self.view.frame.size.height)
+        recipeTable.frame = CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: self.view.frame.size.height)
         // Do any additional setup after loading the view.
     }
 

@@ -63,8 +63,8 @@ class RecipeViewController: UIViewController {
         var direct = ""
         if (direction.count != 0){
             //Goes through array of directions and adds to text
-            for i in 0...direction.count-1{
-                direct += "\(i)) \(direction[i]).\n"
+            for i in 1...direction.count{
+                direct += "\(i)) \(direction[i-1]).\n"
             }
         }
         
@@ -76,7 +76,7 @@ class RecipeViewController: UIViewController {
         
         if (ingredients.count != 0){
             //Goes through array of Ingredients
-            for i in 0...ingredients.count{
+            for i in 0...ingredients.count-1{
                 // Creates temp var to hold current ingredient
                 let ingred: Ingredient = ingredients[i]
                 let t = getMeasurementType(m: Int(ingred.getMeasurement()))

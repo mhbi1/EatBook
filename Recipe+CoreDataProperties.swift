@@ -20,7 +20,7 @@ extension Recipe {
     @NSManaged public var directions: [String]
     @NSManaged public var image: NSData?
     @NSManaged public var rName: String?
-    @NSManaged public var ingredientRel: [Ingredient]
+    @NSManaged public var ingredientRel: NSSet
     
     // Get Functions
     func getName() -> String{
@@ -36,7 +36,7 @@ extension Recipe {
     }
     
     func getIngredients() -> [Any]?{
-        return ingredientRel
+        return ingredientRel.allObjects as? [Ingredient]
     }
     /*func getImage() -> UIIImage{
      return image
