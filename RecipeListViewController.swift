@@ -19,7 +19,6 @@ class RecipeListViewController: UIViewController, UITableViewDelegate, UITableVi
     @IBOutlet weak var recipeTable: UITableView!
     
     func fetchList() {
-        
         // Fetches the request, executes and adds to the array
         recipes = ((try? recipeData.fetch(Recipe.fetchRequest())))!
     }
@@ -34,8 +33,12 @@ class RecipeListViewController: UIViewController, UITableViewDelegate, UITableVi
             noDataLabel.textAlignment = .center
             tableView.backgroundView  = noDataLabel
             tableView.separatorStyle  = .none
+            return recipes.count
         }
-        return recipes.count
+        else{
+            //fetchList()
+            return recipes.count
+        }
     }
     
     // This datasource method will create each cell of the table
@@ -47,6 +50,7 @@ class RecipeListViewController: UIViewController, UITableViewDelegate, UITableVi
             // Get the LogItem for this index
             let r = recipes[indexPath.row]
             print("Creating cells...")
+            
             cell.textLabel?.text = r.getName()
             cell.detailTextLabel?.textAlignment = .right
             
@@ -95,13 +99,16 @@ class RecipeListViewController: UIViewController, UITableViewDelegate, UITableVi
     }
 
     @IBAction func backToRList(segue: UIStoryboardSegue){
-        fetchList()
-        recipeTable.reloadData()
+        //fetchList()
+        self.recipeTable.reloadData()
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         fetchList()
+        recipeTable.rowHeight = UITableViewAutomaticDimension
+        //recipeTable.estimatedRowHeight = 35
+        recipeTable.frame = CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: self.view.frame.size.height)
         // Do any additional setup after loading the view.
     }
 

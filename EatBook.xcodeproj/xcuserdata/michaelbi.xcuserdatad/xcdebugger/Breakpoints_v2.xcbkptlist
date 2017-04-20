@@ -42,11 +42,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "RecipeListViewController.swift"
-            timestampString = "514373478.243406"
+            timestampString = "514376249.692438"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "104"
-            endingLineNumber = "104"
+            startingLineNumber = "103"
+            endingLineNumber = "103"
             landmarkName = "backToRList(segue:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -58,11 +58,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "RecipeListViewController.swift"
-            timestampString = "514373478.243406"
+            timestampString = "514376249.692438"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "89"
-            endingLineNumber = "89"
+            startingLineNumber = "88"
+            endingLineNumber = "88"
             landmarkName = "prepare(for:sender:)"
             landmarkType = "7">
             <Locations>
@@ -74,12 +74,12 @@
                   moduleName = "EatBook"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/michaelbi/Documents/CSE%20335/EatBook/RecipeListViewController.swift"
-                  timestampString = "514373682.178411"
+                  timestampString = "514376354.479326"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "89"
-                  endingLineNumber = "89"
-                  offsetFromSymbolStart = "1251">
+                  startingLineNumber = "88"
+                  endingLineNumber = "88"
+                  offsetFromSymbolStart = "1254">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -89,12 +89,12 @@
                   moduleName = "EatBook"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/michaelbi/Documents/CSE%20335/EatBook/RecipeListViewController.swift"
-                  timestampString = "514373682.181146"
+                  timestampString = "514376354.480722"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "89"
-                  endingLineNumber = "89"
-                  offsetFromSymbolStart = "1469">
+                  startingLineNumber = "88"
+                  endingLineNumber = "88"
+                  offsetFromSymbolStart = "1472">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -112,6 +112,22 @@
             startingLineNumber = "34"
             endingLineNumber = "34"
             landmarkName = "getDirections()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "RecipeListViewController.swift"
+            timestampString = "514376427.636154"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "107"
+            endingLineNumber = "107"
+            landmarkName = "viewDidLoad()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
