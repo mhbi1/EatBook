@@ -2,7 +2,7 @@
 //  Recipe+CoreDataProperties.swift
 //  EatBook
 //
-//  Created by Michael Bi on 4/17/17.
+//  Created by Michael Bi on 4/19/17.
 //  Copyright © 2017 Michael Bi. All rights reserved.
 //
 
@@ -15,11 +15,65 @@ extension Recipe {
     @nonobjc public class func fetchRequest() -> NSFetchRequest<Recipe> {
         return NSFetchRequest<Recipe>(entityName: "Recipe")
     }
-
-    @NSManaged public var category: Int16
-    @NSManaged public var directions: NSObject?
+ 
+    @NSManaged public var category: Int
+    @NSManaged public var directions: [String]
     @NSManaged public var image: NSData?
-    @NSManaged public var ingredients: NSObject?
     @NSManaged public var rName: String?
+    @NSManaged public var ingredientRel: NSSet?
+    
+    // Get Functions
+    func getName() -> String{
+        return rName!
+    }
+    
+    func getCategory() -> Int{
+        return category
+    }
+    
+    func getDirections() -> [String]{
+        return directions
+    }
+    
+    func getIngredients() -> [Any]?{
+        return ingredientRel?.allObjects
+    }
+    /*func getImage() -> UIIImage{
+     return image
+     }*/
+    
+    // Add Functions
+    func addRName(n: String){
+        rName = n
+    }
+    
+    func addCategory(i: Int){
+        category = i
+    }
+    
+    func addDirections(d: [String]){
+        directions = d
+    }
+    
+    /*func addImage(){
+     
+     }*/
+
+}
+
+// MARK: Generated accessors for ingredientRel
+extension Recipe {
+
+    @objc(addIngredientRelObject:)
+    @NSManaged public func addToIngredientRel(_ value: Ingredient)
+
+    @objc(removeIngredientRelObject:)
+    @NSManaged public func removeFromIngredientRel(_ value: Ingredient)
+
+    @objc(addIngredientRel:)
+    @NSManaged public func addToIngredientRel(_ values: NSSet)
+
+    @objc(removeIngredientRel:)
+    @NSManaged public func removeFromIngredientRel(_ values: NSSet)
 
 }

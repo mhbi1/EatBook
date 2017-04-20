@@ -1,5 +1,5 @@
 //
-//  Recipe+CoreDataClass.swift
+//  Ingredient+CoreDataClass.swift
 //  EatBook
 //
 //  Created by Michael Bi on 4/19/17.
@@ -9,7 +9,7 @@
 import Foundation
 import CoreData
 
-@objc(Recipe)
-public class Recipe: NSManagedObject {
+@objc(Ingredient)
+public class Ingredient: Recipe {
 
 }

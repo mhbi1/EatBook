@@ -14,17 +14,13 @@ class HerbSpiceListViewController: UIViewController, UITableViewDelegate, UITabl
     var hbData: NSManagedObjectContext = (UIApplication.shared.delegate as! AppDelegate).managedObjectContext
     
     var herbSpices = [HerbSpice]()
+    var urlString: String = ""
     
     @IBOutlet weak var herbSpiceTable: UITableView!
     
     func fetchList() {
         // Fetches the request, executes and adds to the array
         herbSpices = ((try? hbData.fetch(HerbSpice.fetchRequest())))!
-    }
-    
-    
-    @IBAction func loadTable(_ sender: Any) {
-        herbSpiceTable.reloadData()
     }
     
     // Datasource method that is called when table is loaded
@@ -49,6 +45,18 @@ class HerbSpiceListViewController: UIViewController, UITableViewDelegate, UITabl
         return cell
     }
     
+    // segue will be called as a row of the table is selected
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if(segue.identifier == "toView"){
+            let selectedIndex: IndexPath = self.herbSpiceTable.indexPath(for: sender as! UITableViewCell)!
+            
+            self.urlString = herbSpices[selectedIndex.row].getURL()
+            
+            if let vc: HerbSpiceViewController = segue.destination as? HerbSpiceViewController {
+                vc.urlString = urlString
+            }
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()

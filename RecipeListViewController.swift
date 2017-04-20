@@ -13,49 +13,47 @@ class RecipeListViewController: UIViewController, UITableViewDelegate, UITableVi
 
     var recipeData: NSManagedObjectContext = (UIApplication.shared.delegate as! AppDelegate).managedObjectContext
     
-    
-    var fetchResults = [Recipe]()
-    var name: String = ""
+    var recipes = [Recipe]()
     
     @IBOutlet weak var recipeTable: UITableView!
     
-    func fetchRecord() -> Int {
-        //     print("Fetching...")
-        // Create a new fetch request using the LogItem entity
-        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Recipe")
-        var x = 0
-        // Execute the fetch request, and cast the results to an array of LogItem objects
-        fetchResults = ((try? recipeData.fetch(fetchRequest)) as? [Recipe])!
-        
-        x = fetchResults.count
-        print(x)
-        return x
-    }
-    
-    @IBAction func loadTable(_ sender: Any) {
-        recipeTable.reloadData()
+    func fetchList() {
+        // Fetches the request, executes and adds to the array
+        recipes = ((try? recipeData.fetch(Recipe.fetchRequest())))!
     }
     
     // Datasource method that is called when table is loaded
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return fetchRecord()
+        //If no recipes
+        if (recipes.count == 1){
+            let noDataLabel: UILabel     = UILabel(frame: CGRect(x: 0, y: 0, width: tableView.bounds.size.width, height: tableView.bounds.size.height))
+            noDataLabel.text          = "No recipes available"
+            noDataLabel.textColor     = UIColor.black
+            noDataLabel.textAlignment = .center
+            tableView.backgroundView  = noDataLabel
+            tableView.separatorStyle  = .none
+        }
+        return recipes.count
     }
     
     // This datasource method will create each cell of the table
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        //let context:NSManagedObjectContext = recipeData
+        let cell = tableView.dequeueReusableCell(withIdentifier: "recipeCell", for: indexPath)
         
-        
-        let cell = tableView.dequeueReusableCell(withIdentifier: "placeCell", for: indexPath)
-        //cell.textLabel?.text = fetchResults[indexPath.row].name
-        cell.detailTextLabel?.textAlignment = .right
-        
-        
-        /*let cell_Image = context.value(forKey: "image") as? Data
-         cell.imageView?.image = UIImage(data: cell_Image!)*/
-        
+        if (recipes.count != 1){
+            // Get the LogItem for this index
+            let r = recipes[indexPath.row]
+            
+            cell.textLabel?.text = r.getName()
+            cell.detailTextLabel?.textAlignment = .right
+            
+            /*let cell_Image = context.value(forKey: "image") as? Data
+             cell.imageView?.image = UIImage(data: cell_Image!)*/
+            
+        }
         return cell
+        
     }
     
     // This allows the table to be editted
@@ -67,23 +65,54 @@ class RecipeListViewController: UIViewController, UITableViewDelegate, UITableVi
     // This will delete the cell array that it selects
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath)
     {
-        let context:NSManagedObjectContext = recipeData
         if editingStyle == UITableViewCellEditingStyle.delete
         {
-            context.delete(fetchResults[indexPath.row])
-            fetchResults.remove(at: indexPath.row)
-            do{
-                try recipeData.save()
-            } catch _ {
-            }
             recipeTable.reloadData()
         }
     }
 
     
+    // segue will be called as a row of the table is selected
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if(segue.identifier == "toRView"){
+            let selectedIndex: IndexPath = self.recipeTable.indexPath(for: sender as! UITableViewCell)!
+            // Creates copy of recipes in core data and sends attributes to recipeView
+            let r = recipes[selectedIndex.row]
+            
+            if let vc: RecipeViewController = segue.destination as? RecipeViewController {
+                vc.name = r.getName()
+                vc.category = r.getCategory()
+                vc.ingredients = r.getIngredients() as! [Ingredient]
+                vc.direction = r.getDirections()
+                //vc.image = r.getImage()
+            }
+        }
+        else if (segue.identifier == "toAdd"){
+          
+        }
+    }
+
+    @IBAction func backToRList(segue: UIStoryboardSegue){
+        if(segue.identifier == "addToList"){
+            if let vc = segue.source as? AddRecipeViewController{
+                let ent = NSEntityDescription.entity(forEntityName: "Recipe", in: self.recipeData)
+                var newRecipe = Recipe(entity: ent!, insertInto: self.recipeData)
+                
+                newRecipe = vc.newRecipe
+                
+                do {
+                    try self.recipeData.save()
+                } catch _ {}
+                
+                print(newRecipe)
+            }
+        }
+        else if (segue.identifier == "viewToList"){}
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        fetchList()
         // Do any additional setup after loading the view.
     }
 
