@@ -71,8 +71,15 @@ class RecipeListViewController: UIViewController, UITableViewDelegate, UITableVi
     // This will delete the cell array that it selects
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath)
     {
+        let context:NSManagedObjectContext = recipeData
         if editingStyle == UITableViewCellEditingStyle.delete
         {
+            context.delete(recipes[indexPath.row])
+            recipes.remove(at: indexPath.row)
+            do{
+                try recipeData.save()
+            } catch _ {
+            }
             recipeTable.reloadData()
         }
     }
@@ -80,7 +87,7 @@ class RecipeListViewController: UIViewController, UITableViewDelegate, UITableVi
     
     // segue will be called as a row of the table is selected
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if(segue.identifier == "toRView"){
+        if(segue.identifier == "toView"){
             let selectedIndex: IndexPath = self.recipeTable.indexPath(for: sender as! UITableViewCell)!
             // Creates copy of recipes in core data and sends attributes to recipeView
             let r = recipes[selectedIndex.row]
