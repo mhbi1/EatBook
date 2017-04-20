@@ -21,7 +21,16 @@ class RecipeViewController: UIViewController {
     public var category: Int = 0
     public var ingredients: [Ingredient] = []
     public var direction: [String] = []
-    public var image: UIImage = UIImage()
+    public var image: Data?
+    
+    func getImage() -> UIImage{
+        if (image != nil){
+            return UIImage(data: image!)!
+        }
+        else{
+            return UIImage(named:"noimagefound.jpg")!
+        }
+    }
     
     func getCategory(c: Int) -> String{
         /* 0 - Breakfast/Brunch
@@ -97,7 +106,7 @@ class RecipeViewController: UIViewController {
         directionView.layer.borderWidth = 1
         ingredientView.text = getIngredients()
         ingredientView.layer.borderWidth = 1
-        //image here
+        rImage.image = getImage()
         
         // Do any additional setup after loading the view.
     }

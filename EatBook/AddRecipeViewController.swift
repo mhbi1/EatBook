@@ -10,7 +10,7 @@ import UIKit
 import CoreData
 
 
-class AddRecipeViewController: UIViewController,  UIPickerViewDataSource, UIPickerViewDelegate {
+class AddRecipeViewController: UIViewController,  UIPickerViewDataSource, UIPickerViewDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
 
     @IBOutlet weak var rName: UITextField!
     @IBOutlet weak var category: UITextField!
@@ -43,6 +43,7 @@ class AddRecipeViewController: UIViewController,  UIPickerViewDataSource, UIPick
         newRecipe.addCategory(i: Int16(c))
         newRecipe.addDirections(d: dList)
         for i in iList{ newRecipe.addToIngredientRel(i) }
+        newRecipe.addImage(i: (UIImagePNGRepresentation(image.image!)!))
         
         do {
             try recipeListVC.recipeData.save()
@@ -73,6 +74,17 @@ class AddRecipeViewController: UIViewController,  UIPickerViewDataSource, UIPick
     }
     
     @IBAction func chooseImage(_ sender: UIButton) {
+        let photoPicker = UIImagePickerController()
+        photoPicker.delegate = self
+        photoPicker.sourceType = .photoLibrary
+        // display image selection view
+        self.present(photoPicker, animated: true, completion: nil)
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]){
+        
+        picker .dismiss(animated: true, completion: nil)
+        image.image=info[UIImagePickerControllerOriginalImage] as? UIImage
     }
     
     func updateIngredients(){
@@ -81,6 +93,7 @@ class AddRecipeViewController: UIViewController,  UIPickerViewDataSource, UIPick
             list += "\(i.getAmountString()) \(mItems[Int(i.getMeasurement())])   \t\t\t   \(i.getIName())\n"
         }
         ingredientView.text = list
+        iName.text = ""
     }
     
     func updateDirections(){
@@ -91,9 +104,6 @@ class AddRecipeViewController: UIViewController,  UIPickerViewDataSource, UIPick
         directionView.text = list
         direction.text = ""
     }
-    
-    
-   
     
     //Number of columns in picker
     func numberOfComponents(in pickerView: UIPickerView) -> Int {

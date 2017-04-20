@@ -97,7 +97,7 @@ class RecipeListViewController: UIViewController, UITableViewDelegate, UITableVi
                 vc.category = Int(r.getCategory())
                 vc.ingredients = r.getIngredients() as! [Ingredient]
                 vc.direction = r.getDirections()
-                //vc.image = r.getImage()
+                vc.image = r.getImage() as Data
             }
         }
         else if (segue.identifier == "toAdd"){
@@ -107,6 +107,7 @@ class RecipeListViewController: UIViewController, UITableViewDelegate, UITableVi
 
     @IBAction func backToRList(segue: UIStoryboardSegue){
         fetchList()
+        recipeTable.backgroundView = nil
         self.recipeTable.reloadData()
     }
     

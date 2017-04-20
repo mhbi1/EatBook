@@ -38,9 +38,10 @@ extension Recipe {
     func getIngredients() -> [Any]?{
         return ingredientRel.allObjects as? [Ingredient]
     }
-    /*func getImage() -> UIIImage{
-     return image
-     }*/
+    
+    func getImage() -> Data{
+        return image! as Data
+     }
     
     // Add Functions
     func addRName(n: String){
@@ -55,9 +56,9 @@ extension Recipe {
         directions = d
     }
     
-    /*func addImage(){
-     
-     }*/
+    func addImage(i: Data){
+        image = i as NSData 
+     }
 
 }
 
