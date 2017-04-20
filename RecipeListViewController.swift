@@ -12,12 +12,14 @@ import CoreData
 class RecipeListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     var recipeData: NSManagedObjectContext = (UIApplication.shared.delegate as! AppDelegate).managedObjectContext
+    var ingredientsData: NSManagedObjectContext = (UIApplication.shared.delegate as! AppDelegate).managedObjectContext
     
     var recipes = [Recipe]()
     
     @IBOutlet weak var recipeTable: UITableView!
     
     func fetchList() {
+        
         // Fetches the request, executes and adds to the array
         recipes = ((try? recipeData.fetch(Recipe.fetchRequest())))!
     }
@@ -25,7 +27,7 @@ class RecipeListViewController: UIViewController, UITableViewDelegate, UITableVi
     // Datasource method that is called when table is loaded
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         //If no recipes
-        if (recipes.count == 1){
+        if (recipes.count == 0){
             let noDataLabel: UILabel     = UILabel(frame: CGRect(x: 0, y: 0, width: tableView.bounds.size.width, height: tableView.bounds.size.height))
             noDataLabel.text          = "No recipes available"
             noDataLabel.textColor     = UIColor.black
@@ -41,10 +43,10 @@ class RecipeListViewController: UIViewController, UITableViewDelegate, UITableVi
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "recipeCell", for: indexPath)
         
-        if (recipes.count != 1){
+        if (recipes.count != 0){
             // Get the LogItem for this index
             let r = recipes[indexPath.row]
-            
+            print("Creating cells...")
             cell.textLabel?.text = r.getName()
             cell.detailTextLabel?.textAlignment = .right
             
@@ -81,7 +83,7 @@ class RecipeListViewController: UIViewController, UITableViewDelegate, UITableVi
             
             if let vc: RecipeViewController = segue.destination as? RecipeViewController {
                 vc.name = r.getName()
-                vc.category = r.getCategory()
+                vc.category = Int(r.getCategory())
                 vc.ingredients = r.getIngredients() as! [Ingredient]
                 vc.direction = r.getDirections()
                 //vc.image = r.getImage()
@@ -93,6 +95,8 @@ class RecipeListViewController: UIViewController, UITableViewDelegate, UITableVi
     }
 
     @IBAction func backToRList(segue: UIStoryboardSegue){
+        fetchList()
+        recipeTable.reloadData()
     }
     
     override func viewDidLoad() {

@@ -31,8 +31,7 @@ class AddRecipeViewController: UIViewController,  UIPickerViewDataSource, UIPick
     var a: Double = 0.0
     var aItems = [["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10"], [" ", "3/4", "1/2", "1/4"]]
     var mItems = ["tsp", "tbsp", "cup(s)", "oz", "lb(s)"]
-    var cItems = ["Breakfast/Brucnh", "Lunch", "Appetizers/Snacks", "Entrees: Chicken", "Entrees: Beef", "Entrees: Other", "Desserts"]
-    var ingredientsData: NSManagedObjectContext = (UIApplication.shared.delegate as! AppDelegate).managedObjectContext
+    var cItems = ["Breakfast/Brunch", "Lunch", "Appetizers/Snacks", "Entrees: Chicken", "Entrees: Beef", "Entrees: Other", "Desserts"]
     
     
     @IBAction func saveRecipe(_ sender: UIBarButtonItem) {
@@ -41,27 +40,30 @@ class AddRecipeViewController: UIViewController,  UIPickerViewDataSource, UIPick
             .recipeData)
         
         newRecipe.addRName(n: rName.text!)
-        newRecipe.addCategory(i: c)
-        for i in iList{ newRecipe.addToIngredientRel(i) }
+        newRecipe.addCategory(i: Int16(c))
         newRecipe.addDirections(d: dList)
+        //for i in iList{ newRecipe.addToIngredientRel(i) }
         
         do {
             try recipeListVC.recipeData.save()
         } catch _ {}
-        
-        print(newRecipe)
+       
         self.performSegue(withIdentifier: "addToList", sender: self)
     }
     
     
     @IBAction func addIngredient(_ sender: UIButton) {
-        let ent = NSEntityDescription.entity(forEntityName: "Ingredient", in: self.ingredientsData)
-        let newItem = Ingredient(entity: ent!, insertInto: self.ingredientsData)
+        let ent = NSEntityDescription.entity(forEntityName: "Ingredient", in: recipeListVC.ingredientsData)
+        let newItem = Ingredient(entity: ent!, insertInto: recipeListVC.ingredientsData)
         newItem.addIName(n: iName.text!)
         newItem.addAmount(d: a)
-        newItem.addMeasurement(i: m)
+        newItem.addMeasurement(i: Int16(m))
         
-        iList.append(newItem)
+        do{
+            try recipeListVC.ingredientsData.save()
+        
+            iList.append(newItem)
+        } catch _ {}
         updateIngredients()
     }
     
@@ -76,7 +78,7 @@ class AddRecipeViewController: UIViewController,  UIPickerViewDataSource, UIPick
     func updateIngredients(){
         var list = ""
         for i in iList{
-            list += "\(i.getAmount()) \(mItems[i.getMeasurement()])        \(i.getIName()))\n"
+            list += "\(i.getAmountString()) \(mItems[Int(i.getMeasurement())])   \t\t\t   \(i.getIName())\n"
         }
         ingredientView.text = list
     }
@@ -84,11 +86,14 @@ class AddRecipeViewController: UIViewController,  UIPickerViewDataSource, UIPick
     func updateDirections(){
         var list = ""
         for d in 1...dList.count{
-            list += "\(d). \(dList[d-1]).\n"
+            list += "\(d)) \(dList[d-1]).\n"
         }
         directionView.text = list
         direction.text = ""
     }
+    
+    
+   
     
     //Number of columns in picker
     func numberOfComponents(in pickerView: UIPickerView) -> Int {

@@ -63,31 +63,10 @@ class RecipeViewController: UIViewController {
         var direct = ""
         //Goes through array of directions and adds to text
         for i in 0...direction.count{
-            direct += "\(i). \(direction[i]).\n"
+            direct += "\(i)) \(direction[i]).\n"
         }
         
         return direct
-    }
-    
-    // Converts the double to a string
-    func getAmount(i: Ingredient) -> String{
-        var str = ""
-        let num = i.getAmount() * 4
-        let quo = num / 4
-        let rem = num.truncatingRemainder(dividingBy: 4)
-        if (rem == 1){
-            str = "\(quo) 1/4"
-        }
-        else if (rem == 2){
-            str = "\(quo) 2/4"
-        }
-        else if (rem == 3){
-            str = "\(quo) 3/4"
-        }
-        else{
-            str = "\(quo)"
-        }
-        return str
     }
     
     func getIngredients() -> String{
@@ -97,9 +76,9 @@ class RecipeViewController: UIViewController {
         for i in 0...ingredients.count{
             // Creates temp var to hold current ingredient
             let ingred: Ingredient = ingredients[i]
-            let t = getMeasurementType(m: ingred.getMeasurement())
+            let t = getMeasurementType(m: Int(ingred.getMeasurement()))
             
-            list += "\(getAmount(i: ingred)) \(t)       \(ingred.getIName()) \n"
+            list += "\(ingred.getAmountString()) \(t)       \(ingred.getIName()) \n"
         }
         
         return list

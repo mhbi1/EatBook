@@ -2,7 +2,7 @@
 //  Ingredient+CoreDataProperties.swift
 //  EatBook
 //
-//  Created by Michael Bi on 4/19/17.
+//  Created by Michael Bi on 4/20/17.
 //  Copyright © 2017 Michael Bi. All rights reserved.
 //
 
@@ -18,9 +18,9 @@ extension Ingredient {
 
     @NSManaged public var amount: Double
     @NSManaged public var iName: String?
-    @NSManaged public var measurement: Int
+    @NSManaged public var measurement: Int16
     @NSManaged public var recipeRel: Recipe?
-    
+
     // Get Functions
     func getIName() -> String{
         return iName!
@@ -30,11 +30,8 @@ extension Ingredient {
         return amount
     }
     
-    func getMeasurement() -> Int{
+    func getMeasurement() -> Int16{
         return measurement
-    }
-    func getRecipe() -> Recipe{
-        return recipeRel!
     }
     
     // Add Functions
@@ -46,8 +43,28 @@ extension Ingredient {
         amount = d
     }
     
-    func addMeasurement(i: Int){
+    func addMeasurement(i: Int16){
         measurement = i
     }
     
+    // Converts the double to a string
+    func getAmountString() -> String{
+        var str = ""
+        let num = amount * 4.0
+        let quo = Int(num / 4)
+        let rem = num.truncatingRemainder(dividingBy: 4)
+        if (rem == 1){
+            str = "\(quo) 1/4"
+        }
+        else if (rem == 2){
+            str = "\(quo) 1/2"
+        }
+        else if (rem == 3){
+            str = "\(quo) 3/4"
+        }
+        else{
+            str = "\(quo)"
+        }
+        return str
+    }
 }

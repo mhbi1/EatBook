@@ -3,10 +3,13 @@
    version = "1.0">
    <ContextStates>
       <ContextState
-         contextName = "mach_msg_trap:(null)">
+         contextName = "RecipeListViewController.fetchList() -&gt; ():RecipeListViewController.swift">
+      </ContextState>
+      <ContextState
+         contextName = "Recipe.getName() -&gt; String:Recipe+CoreDataProperties.swift">
          <PersistentStrings>
             <PersistentString
-               value = "herbSpices">
+               value = "recipeData.count">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -15,6 +18,64 @@
          <PersistentStrings>
             <PersistentString
                value = "">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "mach_msg_trap:(null)">
+         <PersistentStrings>
+            <PersistentString
+               value = "herbSpices">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "RecipeListViewController.tableView(UITableView, numberOfRowsInSection : Int) -&gt; Int:RecipeListViewController.swift">
+      </ContextState>
+      <ContextState
+         contextName = "RecipeListViewController.backToRList(segue : UIStoryboardSegue) -&gt; ():RecipeListViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "recipes[0].getDirections()">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "AddRecipeViewController.addIngredient(UIButton) -&gt; ():AddRecipeViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "m">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "RecipeListViewController.tableView(UITableView, cellForRowAt : IndexPath) -&gt; UITableViewCell:RecipeListViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "cell.textLabel.text">
+            </PersistentString>
+            <PersistentString
+               value = "indexPath.row">
+            </PersistentString>
+            <PersistentString
+               value = "recipes.count">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "AddRecipeViewController.recipeListVC.getter:AddRecipeViewController.swift">
+      </ContextState>
+      <ContextState
+         contextName = "AddRecipeViewController.dList.getter:AddRecipeViewController.swift">
+      </ContextState>
+      <ContextState
+         contextName = "AddRecipeViewController.saveRecipe(UIBarButtonItem) -&gt; ():AddRecipeViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "newRecipe.getName()">
+            </PersistentString>
+            <PersistentString
+               value = "recipeListVC.recipes.count">
             </PersistentString>
          </PersistentStrings>
       </ContextState>

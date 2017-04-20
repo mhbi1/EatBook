@@ -16,18 +16,18 @@ extension Recipe {
         return NSFetchRequest<Recipe>(entityName: "Recipe")
     }
  
-    @NSManaged public var category: Int
+    @NSManaged public var category: Int16
     @NSManaged public var directions: [String]
     @NSManaged public var image: NSData?
     @NSManaged public var rName: String?
-    @NSManaged public var ingredientRel: NSSet?
+    @NSManaged public var ingredientRel: Ingredient
     
     // Get Functions
     func getName() -> String{
         return rName!
     }
     
-    func getCategory() -> Int{
+    func getCategory() -> Int16{
         return category
     }
     
@@ -36,7 +36,7 @@ extension Recipe {
     }
     
     func getIngredients() -> [Any]?{
-        return ingredientRel?.allObjects
+        return [ingredientRel]
     }
     /*func getImage() -> UIIImage{
      return image
@@ -47,7 +47,7 @@ extension Recipe {
         rName = n
     }
     
-    func addCategory(i: Int){
+    func addCategory(i: Int16){
         category = i
     }
     
