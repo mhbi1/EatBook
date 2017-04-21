@@ -10,6 +10,9 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBAction func quit(_ sender: UIButton) {
+        exit(0)
+    }
     
     @IBAction func unwindToMainMenu(segue: UIStoryboardSegue){
     

@@ -3,7 +3,18 @@
    version = "1.0">
    <ContextStates>
       <ContextState
+         contextName = "AddRecipeViewController.activeField.getter:AddRecipeViewController.swift">
+      </ContextState>
+      <ContextState
          contextName = "RecipeListViewController.fetchList() -&gt; ():RecipeListViewController.swift">
+      </ContextState>
+      <ContextState
+         contextName = "AddRecipeViewController.keyboardWillShow(Notification) -&gt; ():AddRecipeViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "activeField">
+            </PersistentString>
+         </PersistentStrings>
       </ContextState>
       <ContextState
          contextName = "RecipeViewController.getDirections() -&gt; String:RecipeViewController.swift">
@@ -25,13 +36,10 @@
          contextName = "RecipeListViewController.tableView(UITableView, numberOfRowsInSection : Int) -&gt; Int:RecipeListViewController.swift">
       </ContextState>
       <ContextState
-         contextName = "AddRecipeViewController.saveRecipe(UIBarButtonItem) -&gt; ():AddRecipeViewController.swift">
+         contextName = "RecipeViewController.getIngredients() -&gt; String:RecipeViewController.swift">
          <PersistentStrings>
             <PersistentString
-               value = "newRecipe.getName()">
-            </PersistentString>
-            <PersistentString
-               value = "recipeListVC.recipes.count">
+               value = "ingredients.count">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -58,10 +66,13 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "RecipeListViewController.prepare(for : UIStoryboardSegue, sender : Any?) -&gt; ():RecipeListViewController.swift">
+         contextName = "AddRecipeViewController.saveRecipe(UIBarButtonItem) -&gt; ():AddRecipeViewController.swift">
          <PersistentStrings>
             <PersistentString
-               value = "r.getIngredients().count">
+               value = "newRecipe.getName()">
+            </PersistentString>
+            <PersistentString
+               value = "recipeListVC.recipes.count">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -85,10 +96,10 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "RecipeViewController.getIngredients() -&gt; String:RecipeViewController.swift">
+         contextName = "RecipeListViewController.prepare(for : UIStoryboardSegue, sender : Any?) -&gt; ():RecipeListViewController.swift">
          <PersistentStrings>
             <PersistentString
-               value = "ingredients.count">
+               value = "r.getIngredients().count">
             </PersistentString>
          </PersistentStrings>
       </ContextState>

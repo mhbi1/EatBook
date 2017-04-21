@@ -10,7 +10,7 @@ import UIKit
 import CoreData
 
 
-class AddRecipeViewController: UIViewController,  UIPickerViewDataSource, UIPickerViewDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
+class AddRecipeViewController: UIViewController,  UIPickerViewDataSource, UIPickerViewDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate, UIScrollViewDelegate, UITextFieldDelegate {
 
     @IBOutlet weak var rName: UITextField!
     @IBOutlet weak var category: UITextField!
@@ -22,6 +22,7 @@ class AddRecipeViewController: UIViewController,  UIPickerViewDataSource, UIPick
     @IBOutlet weak var directionView: UITextView!
     @IBOutlet weak var ingredientView: UITextView!
     @IBOutlet weak var image: UIImageView!
+    @IBOutlet weak var scrollView: UIScrollView!
     
     public var iList: [Ingredient] = []
     public var dList: [String] = []
@@ -32,6 +33,7 @@ class AddRecipeViewController: UIViewController,  UIPickerViewDataSource, UIPick
     var aItems = [["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10"], [" ", "3/4", "1/2", "1/4"]]
     var mItems = ["tsp", "tbsp", "cup(s)", "oz", "lb(s)"]
     var cItems = ["Breakfast/Brunch", "Lunch", "Appetizers/Snacks", "Entrees: Chicken", "Entrees: Beef", "Entrees: Other", "Desserts"]
+    var activeField: UITextField?
     
     
     @IBAction func saveRecipe(_ sender: UIBarButtonItem) {
@@ -81,6 +83,14 @@ class AddRecipeViewController: UIViewController,  UIPickerViewDataSource, UIPick
         self.present(photoPicker, animated: true, completion: nil)
     }
     
+    @IBAction func useCamera(_ sender: UIButton) {
+        let picker = UIImagePickerController()
+        picker.delegate = self
+        picker.sourceType = .camera
+        picker.cameraCaptureMode = .photo
+        picker.modalPresentationStyle = .fullScreen
+        self.present(picker,animated: true,completion: nil)
+    }
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]){
         
         picker .dismiss(animated: true, completion: nil)
@@ -103,6 +113,44 @@ class AddRecipeViewController: UIViewController,  UIPickerViewDataSource, UIPick
         }
         directionView.text = list
         direction.text = ""
+    }
+    
+    func keyboardWillShow(_ notification: Notification) {
+        //self.view.frame.origin.y = -260 // Move view 150 points upward
+        if let activeField = activeField, let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
+            let contentInsets = UIEdgeInsets(top: keyboardSize.height, left: 0.0, bottom: 0.0, right: 0.0)
+            scrollView.contentInset = contentInsets
+            scrollView.scrollIndicatorInsets = contentInsets
+            var aRect = self.view.frame
+            aRect.size.height -= keyboardSize.size.height
+            if (!aRect.contains(activeField.frame.origin)) {
+                scrollView.scrollRectToVisible(activeField.frame, animated: true)
+            }
+        }
+    }
+    
+    func keyboardWillHide(_ notification: Notification) {
+        let contentInsets = UIEdgeInsets(top: 10.0, left: 0.0, bottom: 0.0, right: 0.0)
+        scrollView.contentInset = contentInsets
+        scrollView.scrollIndicatorInsets = contentInsets
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        activeField = nil
+    }
+    
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        activeField = textField
     }
     
     //Number of columns in picker
@@ -130,10 +178,12 @@ class AddRecipeViewController: UIViewController,  UIPickerViewDataSource, UIPick
         if (pickerView.tag == 0) {
             category.text = cItems[row]
             c = row
+            self.view.endEditing(true)
         }
         else if (pickerView.tag == 1) {
             measurement.text = mItems[row]
             m = row
+            self.view.endEditing(true)
         }
         else {
             let w = aItems[0][pickerView.selectedRow(inComponent: 0)]
@@ -167,6 +217,7 @@ class AddRecipeViewController: UIViewController,  UIPickerViewDataSource, UIPick
         mPicker.delegate = self
         aPicker.delegate = self
         
+        //Setup for pickerview
         category.inputView = cPicker
         measurement.inputView = mPicker
         iAmount.inputView = aPicker
@@ -174,6 +225,17 @@ class AddRecipeViewController: UIViewController,  UIPickerViewDataSource, UIPick
         cPicker.tag = 0
         mPicker.tag = 1
         aPicker.tag = 2
+        
+        //Allows for keyboard show/hide
+        NotificationCenter.default.addObserver(self, selector: #selector(AddRecipeViewController.keyboardWillShow(_:)), name:NSNotification.Name.UIKeyboardWillShow, object: nil);
+        NotificationCenter.default.addObserver(self, selector: #selector(AddRecipeViewController.keyboardWillHide(_:)), name:NSNotification.Name.UIKeyboardWillHide, object: nil);
+        
+        rName.delegate = self
+        iName.delegate = self
+        direction.delegate = self
+        activeField?.delegate = self
+        
+        scrollView.keyboardDismissMode = .interactive
     }
 
     override func didReceiveMemoryWarning() {

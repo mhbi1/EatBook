@@ -49,7 +49,6 @@ class RecipeListViewController: UIViewController, UITableViewDelegate, UITableVi
         if (recipes.count != 0){
             // Get the LogItem for this index
             let r = recipes[indexPath.row]
-            print("Creating cells...")
             
             cell.textLabel?.text = r.getName()
             cell.detailTextLabel?.textAlignment = .right
