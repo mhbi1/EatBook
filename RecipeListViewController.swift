@@ -37,6 +37,7 @@ class RecipeListViewController: UIViewController, UITableViewDelegate, UITableVi
         }
         else{
             //fetchList()
+            tableView.separatorStyle = .singleLine
             return recipes.count
         }
     }

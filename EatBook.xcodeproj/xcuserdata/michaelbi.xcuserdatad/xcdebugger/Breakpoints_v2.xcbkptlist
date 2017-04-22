@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "RecipeListViewController.swift"
-            timestampString = "514408778.372349"
+            timestampString = "514516134.724671"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "97"
-            endingLineNumber = "97"
+            startingLineNumber = "98"
+            endingLineNumber = "98"
             landmarkName = "prepare(for:sender:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -54,49 +54,17 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "No"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "EatBook/AddRecipeViewController.swift"
-            timestampString = "514431821.781038"
+            timestampString = "514515712.59654"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "120"
-            endingLineNumber = "120"
-            landmarkName = "keyboardWillShow(_:)"
+            startingLineNumber = "101"
+            endingLineNumber = "101"
+            landmarkName = "updateIngredients()"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "EatBook.AddRecipeViewController.keyboardWillShow (Foundation.Notification) -&gt; ()"
-                  moduleName = "EatBook"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/michaelbi/Documents/CSE%20335/EatBook/EatBook/AddRecipeViewController.swift"
-                  timestampString = "514510270.138177"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "120"
-                  endingLineNumber = "120"
-                  offsetFromSymbolStart = "32">
-               </Location>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "EatBook.AddRecipeViewController.keyboardWillShow (Foundation.Notification) -&gt; ()"
-                  moduleName = "EatBook"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/michaelbi/Documents/CSE%20335/EatBook/EatBook/AddRecipeViewController.swift"
-                  timestampString = "514510270.141203"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "120"
-                  endingLineNumber = "120"
-                  offsetFromSymbolStart = "84">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -106,12 +74,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "EatBook/AddRecipeViewController.swift"
-            timestampString = "514510633.238635"
+            timestampString = "514515725.653621"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "139"
-            endingLineNumber = "139"
-            landmarkName = "touchesBegan(_:with:)"
+            startingLineNumber = "65"
+            endingLineNumber = "65"
+            landmarkName = "addIngredient(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

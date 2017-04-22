@@ -118,21 +118,25 @@ class AddRecipeViewController: UIViewController,  UIPickerViewDataSource, UIPick
     func keyboardWillShow(_ notification: Notification) {
         //self.view.frame.origin.y = -260 // Move view 150 points upward
         if let activeField = activeField, let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
-            let contentInsets = UIEdgeInsets(top: keyboardSize.height, left: 0.0, bottom: 0.0, right: 0.0)
+            
+            let contentInsets = UIEdgeInsets(top: scrollView.contentInset.top, left: scrollView.contentInset.left, bottom: keyboardSize.height + 115.0, right: scrollView.contentInset.right)
             scrollView.contentInset = contentInsets
             scrollView.scrollIndicatorInsets = contentInsets
-            var aRect = self.view.frame
+            var aRect = scrollView.frame
             aRect.size.height -= keyboardSize.size.height
+            //Sets the scroll view constraints
             if (!aRect.contains(activeField.frame.origin)) {
                 scrollView.scrollRectToVisible(activeField.frame, animated: true)
+                
             }
         }
     }
     
     func keyboardWillHide(_ notification: Notification) {
-        let contentInsets = UIEdgeInsets(top: 10.0, left: 0.0, bottom: 0.0, right: 0.0)
+        let contentInsets = UIEdgeInsets(top: 59.0, left: 0.0, bottom: 0.0, right: 0.0)
         scrollView.contentInset = contentInsets
         scrollView.scrollIndicatorInsets = contentInsets
+        scrollView.isScrollEnabled = true
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {

@@ -12,7 +12,10 @@
          contextName = "AddRecipeViewController.keyboardWillShow(Notification) -&gt; ():AddRecipeViewController.swift">
          <PersistentStrings>
             <PersistentString
-               value = "activeField">
+               value = "activeField.frame">
+            </PersistentString>
+            <PersistentString
+               value = "scrollView.contentInset">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
