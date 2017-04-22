@@ -34,7 +34,7 @@
 		4C06B99F1EA351DB0023D7FA /* HerbSpiceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HerbSpiceViewController.swift; sourceTree = "<group>"; };
 		4C4447F81EA55BAC000E2F1B /* HerbSpice+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "HerbSpice+CoreDataClass.swift"; sourceTree = "<group>"; };
 		4C4447F91EA55BAC000E2F1B /* HerbSpice+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "HerbSpice+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		4C4644081EAAF7FB001E8B5F /* SubsitutesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubsitutesViewController.swift; sourceTree = "<group>"; };
+		4C4644081EAAF7FB001E8B5F /* SubsitutesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SubsitutesViewController.swift; path = ../SubsitutesViewController.swift; sourceTree = "<group>"; };
 		4C956E4F1EA81EC1004E7EA7 /* Recipe+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Recipe+CoreDataClass.swift"; sourceTree = "<group>"; };
 		4C956E501EA81EC1004E7EA7 /* Recipe+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Recipe+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		4C956E531EA81F02004E7EA7 /* Ingredient+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Ingredient+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -66,7 +66,6 @@
 		4CAD89BE1E80FEC10094A6EE = {
 			isa = PBXGroup;
 			children = (
-				4C4644081EAAF7FB001E8B5F /* SubsitutesViewController.swift */,
 				4C956E531EA81F02004E7EA7 /* Ingredient+CoreDataClass.swift */,
 				4C956E541EA81F02004E7EA7 /* Ingredient+CoreDataProperties.swift */,
 				4C956E4F1EA81EC1004E7EA7 /* Recipe+CoreDataClass.swift */,
@@ -89,6 +88,7 @@
 		4CAD89C91E80FEC10094A6EE /* EatBook */ = {
 			isa = PBXGroup;
 			children = (
+				4C4644081EAAF7FB001E8B5F /* SubsitutesViewController.swift */,
 				4C974B001EA8E548003A69B3 /* noimagefound.jpg */,
 				4C956E571EA82DDD004E7EA7 /* AddRecipeViewController.swift */,
 				4CBF14DB1EA0739500E96090 /* RecipeListViewController.swift */,
