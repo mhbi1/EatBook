@@ -27,7 +27,6 @@ class HerbSpiceViewController: UIViewController {
         let url = URL(string: urlString!)
         let req = URLRequest(url:url!)
         self.webView!.load(req)
-        print("url loaded...")
         
     }
 

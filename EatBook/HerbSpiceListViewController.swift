@@ -60,7 +60,7 @@ class HerbSpiceListViewController: UIViewController, UITableViewDelegate, UITabl
     
     override func viewDidLoad() {
         super.viewDidLoad()
-     
+        
         // Create spice list
         let spiceList = [
             ("Allspice", "http://www.thekitchn.com/thekitchn/ingredients-pantry/from-the-spice-cupboard-allspice-101103"),
@@ -79,7 +79,7 @@ class HerbSpiceListViewController: UIViewController, UITableViewDelegate, UITabl
             ("Turmeric","http://www.thekitchn.com/thekitchn/ingredients-pantry/from-the-spice-cupboard-turmeric-088166"),
             ("Thyme","http://www.thekitchn.com/thekitchn/seasonings/from-the-spice-cupboard-thyme-089346")
         ]
-        
+        // create herb List
         let herbList = [
             ("Basil", "http://www.thekitchn.com/seasonal-spotlight-basil-88762"),
             ("Cilantro", "http://www.thekitchn.com/the-herb-you-love-or-hate-cilantro-ingredient-intelligence-210866"),
@@ -92,21 +92,22 @@ class HerbSpiceListViewController: UIViewController, UITableViewDelegate, UITabl
             ("Thyme (fresh)", "http://www.thekitchn.com/thekitchn/seasonings/from-the-spice-cupboard-thyme-089346")
         ]
         
-        // Loop through, creating items
-        for (nameText, urlLink) in herbList {
-            // Create an individual item
-            HerbSpice.createInManagedObjectContext(moc: hbData,
-                                    name: nameText, url: urlLink)
-        }
-        // Loop through, creating items
-        for (nameText, urlLink) in spiceList {
-            // Create an individual item
-            HerbSpice.createInManagedObjectContext(moc: hbData,
-                                                   name: nameText, url: urlLink)
+        if (herbSpices.count == 0){
+            // Loop through, creating items
+            for (nameText, urlLink) in herbList {
+                // Create an individual item
+                HerbSpice.createInManagedObjectContext(moc: hbData,
+                                        name: nameText, url: urlLink)
+            }
+            // Loop through, creating items
+            for (nameText, urlLink) in spiceList {
+                // Create an individual item
+                HerbSpice.createInManagedObjectContext(moc: hbData,
+                                                       name: nameText, url: urlLink)
+            }
         }
         
         fetchList()
-    
     }
 
     override func didReceiveMemoryWarning() {

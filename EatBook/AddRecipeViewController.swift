@@ -91,16 +91,37 @@ class AddRecipeViewController: UIViewController,  UIPickerViewDataSource, UIPick
         picker.modalPresentationStyle = .fullScreen
         self.present(picker,animated: true,completion: nil)
     }
+    
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]){
         
         picker .dismiss(animated: true, completion: nil)
-        image.image=info[UIImagePickerControllerOriginalImage] as? UIImage
+        image.image = normalizedImage(img: (info[UIImagePickerControllerOriginalImage] as? UIImage)!)
+    }
+    
+    //Corrects orientation of image
+    func normalizedImage(img: UIImage) -> UIImage {
+        if (img.imageOrientation == UIImageOrientation.up) {
+            return img;
+        }
+        
+        UIGraphicsBeginImageContextWithOptions(img.size, false, img.scale);
+        let rect = CGRect(x: 0, y: 0, width: img.size.width, height: img.size.height)
+        img.draw(in: rect)
+        
+        let normalizedImage : UIImage = UIGraphicsGetImageFromCurrentImageContext()!
+        UIGraphicsEndImageContext();
+        return normalizedImage;
     }
     
     func updateIngredients(){
         var list = ""
         for i in iList{
-            list += "\(i.getAmountString()) \(mItems[Int(i.getMeasurement())])   \t\t\t   \(i.getIName())\n"
+            if (i.getMeasurement() == 1 || i.getMeasurement() == 2){
+                list += "\(i.getAmountString()) \(mItems[Int(i.getMeasurement())])   \t\t   \(i.getIName())\n"
+            }
+            else{
+                list += "\(i.getAmountString()) \(mItems[Int(i.getMeasurement())])   \t\t   \(i.getIName())\n"
+            }
         }
         ingredientView.text = list
         iName.text = ""
