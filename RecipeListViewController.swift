@@ -53,9 +53,7 @@ class RecipeListViewController: UIViewController, UITableViewDelegate, UITableVi
             
             cell.textLabel?.text = r.getName()
             cell.detailTextLabel?.textAlignment = .right
-            
-            /*let cell_Image = context.value(forKey: "image") as? Data
-             cell.imageView?.image = UIImage(data: cell_Image!)*/
+            cell.imageView?.image = UIImage(data: r.getImage())
             
         }
         return cell
