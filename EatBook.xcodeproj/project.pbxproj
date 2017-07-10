@@ -10,9 +10,10 @@
 		4C06B99C1EA351A70023D7FA /* RecipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C06B99B1EA351A70023D7FA /* RecipeViewController.swift */; };
 		4C06B99E1EA351CE0023D7FA /* HerbSpiceListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C06B99D1EA351CE0023D7FA /* HerbSpiceListViewController.swift */; };
 		4C06B9A01EA351DB0023D7FA /* HerbSpiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C06B99F1EA351DB0023D7FA /* HerbSpiceViewController.swift */; };
+		4C1F82031EAC37AE00ED9B7C /* SubsitutesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C1F82021EAC37AE00ED9B7C /* SubsitutesViewController.swift */; };
+		4C1F82051EAC37B400ED9B7C /* RecipeListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C1F82041EAC37B400ED9B7C /* RecipeListViewController.swift */; };
 		4C4447FA1EA55BAC000E2F1B /* HerbSpice+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C4447F81EA55BAC000E2F1B /* HerbSpice+CoreDataClass.swift */; };
 		4C4447FB1EA55BAC000E2F1B /* HerbSpice+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C4447F91EA55BAC000E2F1B /* HerbSpice+CoreDataProperties.swift */; };
-		4C4644091EAAF7FB001E8B5F /* SubsitutesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C4644081EAAF7FB001E8B5F /* SubsitutesViewController.swift */; };
 		4C956E511EA81EC1004E7EA7 /* Recipe+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C956E4F1EA81EC1004E7EA7 /* Recipe+CoreDataClass.swift */; };
 		4C956E521EA81EC1004E7EA7 /* Recipe+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C956E501EA81EC1004E7EA7 /* Recipe+CoreDataProperties.swift */; };
 		4C956E551EA81F02004E7EA7 /* Ingredient+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C956E531EA81F02004E7EA7 /* Ingredient+CoreDataClass.swift */; };
@@ -25,16 +26,16 @@
 		4CAD89D31E80FEC10094A6EE /* EatBook.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4CAD89D11E80FEC10094A6EE /* EatBook.xcdatamodeld */; };
 		4CAD89D51E80FEC10094A6EE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4CAD89D41E80FEC10094A6EE /* Assets.xcassets */; };
 		4CAD89D81E80FEC10094A6EE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4CAD89D61E80FEC10094A6EE /* LaunchScreen.storyboard */; };
-		4CBF14DC1EA0739500E96090 /* RecipeListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CBF14DB1EA0739500E96090 /* RecipeListViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		4C06B99B1EA351A70023D7FA /* RecipeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeViewController.swift; sourceTree = "<group>"; };
 		4C06B99D1EA351CE0023D7FA /* HerbSpiceListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HerbSpiceListViewController.swift; sourceTree = "<group>"; };
 		4C06B99F1EA351DB0023D7FA /* HerbSpiceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HerbSpiceViewController.swift; sourceTree = "<group>"; };
+		4C1F82021EAC37AE00ED9B7C /* SubsitutesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubsitutesViewController.swift; sourceTree = "<group>"; };
+		4C1F82041EAC37B400ED9B7C /* RecipeListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeListViewController.swift; sourceTree = "<group>"; };
 		4C4447F81EA55BAC000E2F1B /* HerbSpice+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "HerbSpice+CoreDataClass.swift"; sourceTree = "<group>"; };
 		4C4447F91EA55BAC000E2F1B /* HerbSpice+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "HerbSpice+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		4C4644081EAAF7FB001E8B5F /* SubsitutesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SubsitutesViewController.swift; path = ../SubsitutesViewController.swift; sourceTree = "<group>"; };
 		4C956E4F1EA81EC1004E7EA7 /* Recipe+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Recipe+CoreDataClass.swift"; sourceTree = "<group>"; };
 		4C956E501EA81EC1004E7EA7 /* Recipe+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Recipe+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		4C956E531EA81F02004E7EA7 /* Ingredient+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Ingredient+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -49,7 +50,6 @@
 		4CAD89D41E80FEC10094A6EE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4CAD89D71E80FEC10094A6EE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4CAD89D91E80FEC10094A6EE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		4CBF14DB1EA0739500E96090 /* RecipeListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RecipeListViewController.swift; path = ../RecipeListViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,10 +88,10 @@
 		4CAD89C91E80FEC10094A6EE /* EatBook */ = {
 			isa = PBXGroup;
 			children = (
-				4C4644081EAAF7FB001E8B5F /* SubsitutesViewController.swift */,
+				4C1F82041EAC37B400ED9B7C /* RecipeListViewController.swift */,
+				4C1F82021EAC37AE00ED9B7C /* SubsitutesViewController.swift */,
 				4C974B001EA8E548003A69B3 /* noimagefound.jpg */,
 				4C956E571EA82DDD004E7EA7 /* AddRecipeViewController.swift */,
-				4CBF14DB1EA0739500E96090 /* RecipeListViewController.swift */,
 				4C06B99B1EA351A70023D7FA /* RecipeViewController.swift */,
 				4C06B99D1EA351CE0023D7FA /* HerbSpiceListViewController.swift */,
 				4C06B99F1EA351DB0023D7FA /* HerbSpiceViewController.swift */,
@@ -182,7 +182,8 @@
 			files = (
 				4C06B99E1EA351CE0023D7FA /* HerbSpiceListViewController.swift in Sources */,
 				4C4447FA1EA55BAC000E2F1B /* HerbSpice+CoreDataClass.swift in Sources */,
-				4CBF14DC1EA0739500E96090 /* RecipeListViewController.swift in Sources */,
+				4C1F82031EAC37AE00ED9B7C /* SubsitutesViewController.swift in Sources */,
+				4C1F82051EAC37B400ED9B7C /* RecipeListViewController.swift in Sources */,
 				4CAD89CD1E80FEC10094A6EE /* ViewController.swift in Sources */,
 				4C06B9A01EA351DB0023D7FA /* HerbSpiceViewController.swift in Sources */,
 				4C956E511EA81EC1004E7EA7 /* Recipe+CoreDataClass.swift in Sources */,
@@ -194,7 +195,6 @@
 				4C06B99C1EA351A70023D7FA /* RecipeViewController.swift in Sources */,
 				4C956E551EA81F02004E7EA7 /* Ingredient+CoreDataClass.swift in Sources */,
 				4C956E521EA81EC1004E7EA7 /* Recipe+CoreDataProperties.swift in Sources */,
-				4C4644091EAAF7FB001E8B5F /* SubsitutesViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

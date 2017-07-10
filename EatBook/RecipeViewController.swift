@@ -24,12 +24,7 @@ class RecipeViewController: UIViewController {
     public var image: Data?
     
     func getImage() -> UIImage{
-        if (image != nil){
-            return UIImage(data: image!)!
-        }
-        else{
-            return UIImage(named:"noimagefound.jpg")!
-        }
+        return UIImage(data: image!)!
     }
     
     func getCategory(c: Int) -> String{
@@ -90,7 +85,7 @@ class RecipeViewController: UIViewController {
                 let ingred: Ingredient = ingredients[i]
                 let t = getMeasurementType(m: Int(ingred.getMeasurement()))
                 
-                list += "\(ingred.getAmountString()) \(t) \t\t\t       \(ingred.getIName()) \n"
+                list += "\(ingred.getIName()), \(ingred.getAmountString()) \(t)       \n"
             }
         }
         return list

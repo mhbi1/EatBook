@@ -45,7 +45,7 @@ class AddRecipeViewController: UIViewController,  UIPickerViewDataSource, UIPick
         newRecipe.addCategory(i: Int16(c))
         newRecipe.addDirections(d: dList)
         for i in iList{ newRecipe.addToIngredientRel(i) }
-        newRecipe.addImage(i: (UIImagePNGRepresentation(image.image!)!))
+        newRecipe.addImage(i: checkImage())
         
         do {
             try recipeListVC.recipeData.save()
@@ -92,6 +92,17 @@ class AddRecipeViewController: UIViewController,  UIPickerViewDataSource, UIPick
         self.present(picker,animated: true,completion: nil)
     }
     
+    //Checks for empty
+    func checkImage() -> Data{
+        if (image.image != nil){
+            return (UIImagePNGRepresentation(image.image!)!)
+        }
+        else{
+            return UIImagePNGRepresentation(UIImage(named:"noimagefound.jpg")!)!
+        }
+    }
+    
+    //Choose image
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]){
         
         picker .dismiss(animated: true, completion: nil)
@@ -260,7 +271,17 @@ class AddRecipeViewController: UIViewController,  UIPickerViewDataSource, UIPick
         direction.delegate = self
         activeField?.delegate = self
         
+        //Dismiss keyboard by swiping
         scrollView.keyboardDismissMode = .interactive
+        // Dismisses keyboard by clicking
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(SubsitutesViewController.dismissKeyboard))
+        view.addGestureRecognizer(tap)
+    }
+
+    //Calls this function when the tap is recognized.
+    func dismissKeyboard() {
+        //Causes the view (or one of its embedded text fields) to resign the first responder status.
+        view.endEditing(true)
     }
 
     override func didReceiveMemoryWarning() {

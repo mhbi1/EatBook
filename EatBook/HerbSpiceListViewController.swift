@@ -92,6 +92,7 @@ class HerbSpiceListViewController: UIViewController, UITableViewDelegate, UITabl
             ("Thyme (fresh)", "http://www.thekitchn.com/thekitchn/seasonings/from-the-spice-cupboard-thyme-089346")
         ]
         
+        fetchList()
         if (herbSpices.count == 0){
             // Loop through, creating items
             for (nameText, urlLink) in herbList {
@@ -105,9 +106,10 @@ class HerbSpiceListViewController: UIViewController, UITableViewDelegate, UITabl
                 HerbSpice.createInManagedObjectContext(moc: hbData,
                                                        name: nameText, url: urlLink)
             }
+            fetchList()
         }
         
-        fetchList()
+        
     }
 
     override func didReceiveMemoryWarning() {
